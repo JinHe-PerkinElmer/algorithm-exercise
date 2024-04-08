@@ -32,18 +32,30 @@ function getSubMatrixMaxSum(matrix) {
   return max;
 }
 
-function insertionSort(arr) {
-  let current = 0;
-  let j = 0;
-  for (let i = 1; i < arr.length; i += 1) {
-    j = i - 1;
-    current = arr[i];
-    // if want Desc order: arr[j] < current
-    while (j >= 0 && arr[j] > current) {
-      arr[j + 1] = arr[j];
-      j -= 1;
-    }
-    arr[j + 1] = current;
+// function insertionSort(arr) {
+//   let current = 0;
+//   let j = 0;
+//   for (let i = 1; i < arr.length; i += 1) {
+//     j = i - 1;
+//     current = arr[i];
+//     // if want Desc order: arr[j] < current
+//     while (j >= 0 && arr[j] > current) {
+//       arr[j + 1] = arr[j];
+//       j -= 1;
+//     }
+//     arr[j + 1] = current;
+//   }
+//   return arr;
+// }
+
+function insertionSort(arr, n) {
+  for (var i = 1; i < n; i++) {
+      var key = arr[i];
+      var j = i - 1;
+      while (j >= 0 && arr[j] > key) {
+          arr[j + 1] = arr[j];
+          j--;
+      }
+      arr[j + 1] = key;
   }
-  return arr;
 }
